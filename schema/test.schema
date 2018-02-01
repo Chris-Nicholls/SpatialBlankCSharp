@@ -1,0 +1,11 @@
+package test.component;
+
+
+type Void{}
+
+component Commander {
+	id = 1001;
+
+	command Void test_command(Void);
+
+}

@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "path": "../../dependencies/worker_sdk/managed",
+      "path": "improbable/dependencies/managed",
       "type": "worker_sdk",
       "packages": [
         {
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "path": "../../dependencies/worker_sdk/native",
+      "path": "improbable/dependencies/native",
       "type": "worker_sdk",
       "packages": [
         {

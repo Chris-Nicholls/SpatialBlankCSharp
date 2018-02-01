@@ -16,7 +16,7 @@
             "process_schema",
             "generate",
             "--cachePath=.spatialos/schema_codegen_cache",
-            "--output=../../generated_code/csharp",
+            "--output=improbable/generated",
             "--language=csharp"
           ]
         }
@@ -33,34 +33,24 @@
           ]
         },
         {
-          "name": "Linux",
-          "command": "msbuild",
-          "arguments": [
-            "/p:Configuration=ReleaseLinux",
-            "/p:Platform=x64",
-            "Managed.sln"
-          ],
-          "target": "ReleaseLinux"
-        },
-        {
-          "name": "macOS",
-          "command": "msbuild",
-          "arguments": [
-            "/p:Configuration=ReleaseMacOS",
-            "/p:Platform=x64",
-            "Managed.sln"
-          ],
-          "target": "ReleaseMacOS"
-        },
-        {
           "name": "Windows",
           "command": "msbuild",
           "arguments": [
             "/p:Configuration=ReleaseWindows",
             "/p:Platform=x64",
-            "Managed.sln"
+            "TestWorker.sln"
           ],
-          "target": "ReleaseWindows"
+          "target": "Windows"
+        },
+        {
+          "name": "Linux",
+          "command": "msbuild",
+          "arguments": [
+            "/p:Configuration=ReleaseLinux",
+            "/p:Platform=x64",
+            "TestWorker.sln"
+          ],
+          "target": "deployment"
         }
       ]
     },
@@ -74,31 +64,9 @@
             "/t:Clean",
             "/p:Configuration=ReleaseWindows",
             "/p:Platform=x64",
-            "Managed.sln"
+            "TestWorker.sln"
           ],
-          "target": "ReleaseWindows"
-        },
-        {
-          "name": "Linux",
-          "command": "msbuild",
-          "arguments": [
-            "/t:Clean",
-            "/p:Configuration=ReleaseLinux",
-            "/p:Platform=x64",
-            "Managed.sln"
-          ],
-          "target": "ReleaseLinux"
-        },
-        {
-          "name": "macOS",
-          "command": "msbuild",
-          "arguments": [
-            "/t:Clean",
-            "/p:Configuration=ReleaseMacOS",
-            "/p:Platform=x64",
-            "Managed.sln"
-          ],
-          "target": "ReleaseMacOS"
+          "target": "Windows"
         },
         {
           "name": "Dependencies",

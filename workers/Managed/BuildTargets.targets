@@ -32,4 +32,10 @@
     <PackagePath>package\x64\ReleaseLinux\</PackagePath>
     <WorkerPlatform>linux</WorkerPlatform>
   </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Snapshot'">
+    <OutputPath>bin\Snapshot</OutputPath>
+    <PackagePath>bin\Snapshot</PackagePath>
+    <WorkerPlatform>windows</WorkerPlatform>
+  </PropertyGroup>
+
 </Project>

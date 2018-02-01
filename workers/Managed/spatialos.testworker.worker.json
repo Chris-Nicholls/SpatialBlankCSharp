@@ -1,0 +1,65 @@
+{
+  "build": {
+    "tasks_filename": "spatialos.testworker.build.json"
+  },
+  "bridge": {
+    "worker_attribute_set": {
+      "attributes": [
+        "testworker"
+      ]
+    },
+    "entity_interest": {
+      "range_entity_interest": {
+        "radius": 50
+      }
+    },
+    "streaming_query": [],
+    "component_delivery": {
+      "default": "RELIABLE_ORDERED",
+      "checkout_all_initially": true
+    }
+  },
+   "managed": {
+    "windows": {
+      "artifact_name": "testworker@Windows.zip",
+      "command": "./testworker.exe",
+      "arguments": [
+        "+workerId",
+        "${IMPROBABLE_WORKER_ID}",
+        "+receptionistIp",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
+        "+receptionistPort",
+        "${IMPROBABLE_RECEPTIONIST_PORT}",
+        "+logfile",
+        "${IMPROBABLE_LOG_FILE}"
+        ]
+    },
+    "linux": {
+      "artifact_name": "testworker@Linux.zip",
+      "command": "mono",
+      "arguments": [
+        "./testworker.exe",
+        "+workerId",
+        "${IMPROBABLE_WORKER_ID}",
+        "+receptionistIp",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
+        "+receptionistPort",
+        "${IMPROBABLE_RECEPTIONIST_PORT}",
+        "+logfile",
+        "${IMPROBABLE_LOG_FILE}"
+        ]
+    }
+  },
+  "external": {
+    "default": {
+      "run_type": "EXECUTABLE_ZIP",
+      "windows": {
+        "artifact_name": "testworker@Windows.zip",
+        "command": "./testworker.exe",
+        "arguments": [
+        ]
+      }
+      
+    }
+  }
+}
